@@ -118,3 +118,6 @@ export TERM=xterm-256color
 
 # frequently used directories
 export CDPATH=.:$HOME/xfc/src/musica:$HOME/xfc/src/musica/escuela
+
+# colorized less. Depends on python-pygments
+export LESSOPEN="| pygmentize -f terminal256 -O style=native -g %s"
