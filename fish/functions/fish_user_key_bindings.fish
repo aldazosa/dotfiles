@@ -1,0 +1,29 @@
+function bind_bang
+        switch (commandline -t)
+                case "!"
+                        commandline -t $history[1]; commandline -f repaint
+                case "*"
+                        commandline -i !
+        end
+end
+
+function bind_dollar
+        switch (commandline -t)
+                case "!"
+                        commandline -t ""
+                        commandline -f history-token-search-backward
+                case "*"
+                        commandline -i '$'
+        end
+end
+
+function fish_user_key_bindings
+        bind \ep history-search-backward
+        bind \en history-search-forward
+        bind \cp up-or-search
+        bind \cn down-or-search
+        bind ! bind_bang
+        bind '$' bind_dollar
+end
+
+fzf_key_bindings
