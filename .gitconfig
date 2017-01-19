@@ -33,6 +33,7 @@
         lg = log -p
         ls = ls-files
         df = diff
+        g = grep --break --heading --line-number
 [push]
         default = tracking
 [merge]
@@ -40,4 +41,7 @@
 [github]
 	user = aldazosa
 [diff "clojure"]
-	xfuncname = (^\\(.*|\\s*\\(defn.*)
+       xfuncname = (^\\(.*|\\s*\\(defn.*)
+[grep]
+        extendRegexp = true
+        lineNumber = true
